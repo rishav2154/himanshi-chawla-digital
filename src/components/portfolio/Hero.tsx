@@ -1,17 +1,11 @@
-import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { ArrowRight, Download, Mail, Sparkles } from "lucide-react";
-import { profile, roles, floatingStats } from "@/data/portfolio";
+import { profile, floatingStats } from "@/data/portfolio";
 import { MagneticButton } from "./MagneticButton";
 import { Hero3D } from "./Hero3D";
 
 
 export function Hero() {
-  const [roleIdx, setRoleIdx] = useState(0);
-  useEffect(() => {
-    const i = setInterval(() => setRoleIdx((p) => (p + 1) % roles.length), 2400);
-    return () => clearInterval(i);
-  }, []);
 
   return (
     <section id="home" className="relative min-h-screen flex items-center justify-center px-4 pt-28 pb-20 overflow-hidden">
@@ -28,30 +22,26 @@ export function Hero() {
           </span>
         </motion.div>
 
-        <Hero3D />
-
-        <div className="mt-8 text-center">
-
+        <div className="mt-8 text-center relative z-20">
           <SplitTitle text={profile.name} />
+
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 1.2 }}
+            transition={{ delay: 1.0 }}
             className="mt-4 text-sm md:text-base text-muted-foreground tracking-wide uppercase"
           >
-            {profile.role}
+            Head of Business Development & Co-Founder
           </motion.p>
 
-          <div className="mt-8 h-12 flex items-center justify-center">
+          <div className="mt-4 h-12 flex items-center justify-center">
             <motion.div
-              key={roleIdx}
               initial={{ opacity: 0, y: 20, filter: "blur(10px)" }}
               animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
-              exit={{ opacity: 0, y: -20 }}
               transition={{ duration: 0.5 }}
               className="text-xl md:text-3xl font-semibold text-gradient-brand"
             >
-              {roles[roleIdx]}
+              Digital Marketing Strategist
             </motion.div>
           </div>
 
@@ -72,6 +62,8 @@ export function Hero() {
             </MagneticButton>
           </motion.div>
         </div>
+
+        <Hero3D />
 
         <FloatingStats />
       </div>
