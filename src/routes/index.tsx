@@ -14,6 +14,12 @@ import { Leadership } from "@/components/portfolio/Leadership";
 import { Achievements } from "@/components/portfolio/Achievements";
 import { Contact } from "@/components/portfolio/Contact";
 import { Footer } from "@/components/portfolio/Footer";
+import { Services } from "@/components/portfolio/Services";
+import { Education } from "@/components/portfolio/Education";
+import { Testimonials } from "@/components/portfolio/Testimonials";
+import { Process } from "@/components/portfolio/Process";
+import { FAQ } from "@/components/portfolio/FAQ";
+import { CTA } from "@/components/portfolio/CTA";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -38,12 +44,18 @@ function Home() {
       <Hero />
       <Marquee />
       <About />
+      <Services />
       <Skills />
+      <Process />
       <Experience />
+      <Education />
       <Projects />
       <Certifications />
       <Leadership />
       <Achievements />
+      <Testimonials />
+      <FAQ />
+      <CTA />
       <Contact />
       <Footer />
     </main>
