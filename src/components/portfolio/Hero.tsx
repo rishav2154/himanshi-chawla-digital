@@ -1,17 +1,11 @@
-import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { ArrowRight, Download, Mail, Sparkles } from "lucide-react";
-import { profile, roles, floatingStats } from "@/data/portfolio";
+import { profile, floatingStats } from "@/data/portfolio";
 import { MagneticButton } from "./MagneticButton";
 import { Hero3D } from "./Hero3D";
 
 
 export function Hero() {
-  const [roleIdx, setRoleIdx] = useState(0);
-  useEffect(() => {
-    const i = setInterval(() => setRoleIdx((p) => (p + 1) % roles.length), 2400);
-    return () => clearInterval(i);
-  }, []);
 
   return (
     <section id="home" className="relative min-h-screen flex items-center justify-center px-4 pt-28 pb-20 overflow-hidden">
