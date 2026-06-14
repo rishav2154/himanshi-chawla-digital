@@ -36,10 +36,8 @@ export function Hero() {
 
           <div className="mt-4 h-12 flex items-center justify-center">
             <motion.div
-              key={roleIdx}
               initial={{ opacity: 0, y: 20, filter: "blur(10px)" }}
               animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
-              exit={{ opacity: 0, y: -20 }}
               transition={{ duration: 0.5 }}
               className="text-xl md:text-3xl font-semibold text-gradient-brand"
             >
