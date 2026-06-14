@@ -28,21 +28,19 @@ export function Hero() {
           </span>
         </motion.div>
 
-        <Hero3D />
-
-        <div className="mt-8 text-center">
-
+        <div className="mt-8 text-center relative z-20">
           <SplitTitle text={profile.name} />
+
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 1.2 }}
+            transition={{ delay: 1.0 }}
             className="mt-4 text-sm md:text-base text-muted-foreground tracking-wide uppercase"
           >
-            {profile.role}
+            Head of Business Development & Co-Founder
           </motion.p>
 
-          <div className="mt-8 h-12 flex items-center justify-center">
+          <div className="mt-4 h-12 flex items-center justify-center">
             <motion.div
               key={roleIdx}
               initial={{ opacity: 0, y: 20, filter: "blur(10px)" }}
@@ -51,7 +49,7 @@ export function Hero() {
               transition={{ duration: 0.5 }}
               className="text-xl md:text-3xl font-semibold text-gradient-brand"
             >
-              {roles[roleIdx]}
+              Digital Marketing Strategist
             </motion.div>
           </div>
 
@@ -72,6 +70,8 @@ export function Hero() {
             </MagneticButton>
           </motion.div>
         </div>
+
+        <Hero3D />
 
         <FloatingStats />
       </div>
