@@ -3,6 +3,8 @@ import { motion } from "framer-motion";
 import { ArrowRight, Download, Mail, Sparkles } from "lucide-react";
 import { profile, roles, floatingStats } from "@/data/portfolio";
 import { MagneticButton } from "./MagneticButton";
+import { Hero3D } from "./Hero3D";
+
 
 export function Hero() {
   const [roleIdx, setRoleIdx] = useState(0);
@@ -26,7 +28,10 @@ export function Hero() {
           </span>
         </motion.div>
 
+        <Hero3D />
+
         <div className="mt-8 text-center">
+
           <SplitTitle text={profile.name} />
           <motion.p
             initial={{ opacity: 0, y: 20 }}
